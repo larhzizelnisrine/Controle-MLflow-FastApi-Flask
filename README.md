@@ -18,4 +18,4 @@ Using Json format is impractical for users, to simplify the process we create a 
 We also create a container for Flask, by using Flask/Dockerfile
 You can see a running example in the Flask/Screenshots folder.
 N.B: For the two containers to communicate, you will need to create a bridge network: docker network create network_name --driver bridge, then run the two containers in the newly created network by adding:
---network network_name to the docker run command.
+--network network_name to the docker run command..
