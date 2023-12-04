@@ -1,7 +1,9 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-COPY ./fastApp /app
-COPY ./models app/models
-RUN pip install -r requirements.txt
-EXPOSE 80
-CMD ["uvicorn", "imdb_app:app", "--host", "0.0.0.0", "--port", "80"]
+COPY . /app
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
